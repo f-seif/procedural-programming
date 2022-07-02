@@ -1,0 +1,52 @@
+//First task
+
+FUNCTION dot_product(v1: ARRAY, v2: ARRAY, n: INTEGER)
+VAR
+    i, ps = INTEGER;
+BEGIN
+    FOR i FROM 0 TO n STEP 1 DO 
+    	ps += v1[i] * v2[i]
+    END_FOR
+    RETURN ps;
+END
+
+ALGORITHM areVectorsOrthogonal
+VAR
+	v1, v2 = ARRAY;
+    n: INTEGER;
+BEGIN
+	v1:= Read(Vect1);
+	v2:= Read(Vect2);
+	n:= Read(number);
+	IF (dot_product(v1: ARRAY, v2: ARRAY, n: INTEGER) === 0) THEN
+   		Write ("The vectors are orthogonal");
+	ELSE
+        Write ("The vectors are not orthogonal");
+	END_IF
+END
+
+//Second task
+
+PROCEDURE insertionSort( A : ARRAY )
+VAR
+   holePosition, valueToInsert, i = INTEGER;
+BEGIN	
+   FOR i FROM 1 to A.length STEP 1 DO
+	
+      /* select value to be inserted */
+      valueToInsert = A[i]
+      holePosition = i
+      
+      /*locate hole position for the element to be inserted */
+		
+      WHILE holePosition > 0 and A[holePosition-1] > valueToInsert DO
+         A[holePosition] = A[holePosition-1]
+         holePosition = holePosition -1
+      END_WHILE
+		
+      /* insert the number at hole position */
+      A[holePosition] = valueToInsert
+      
+   END_FOR
+	
+END
